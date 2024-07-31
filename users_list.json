@@ -1,0 +1,62 @@
+[
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$oUf2NTBU9FdAISuxj6EPLj$BsACEq4Tyy3fnIP1BFG7KNKyuE0rnnGoV0vNwg1WxPw=",
+    "last_login": null,
+    "is_superuser": true,
+    "first_name": "Admin",
+    "last_name": "Admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-07-29T07:18:45.305Z",
+    "email": "admin@admin.com",
+    "phone": null,
+    "country": null,
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Владимир",
+    "last_name": "Прист",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-30T12:47:28.699Z",
+    "email": "pristanskyvs@mail.ru",
+    "phone": null,
+    "country": null,
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "first_name": "Петр",
+    "last_name": "Петровский",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-30T12:47:58.810Z",
+    "email": "roddelt@mail.ru",
+    "phone": null,
+    "country": null,
+    "avatar": "",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
