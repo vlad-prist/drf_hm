@@ -26,9 +26,9 @@ user_delete = UserViewSet.as_view({'delete': 'destroy'})
 
 urlpatterns = format_suffix_patterns([
     path('register/', user_create, name='register'),
-    path('users/detail/<int:pk>/', user_detail, name='user-detail'),
-    path('users/update/<int:pk>/', user_update, name='user-detail'),
-    path('users/delete/<int:pk>/', user_delete, name='user-delete'),
+    path('detail/<int:pk>/', user_detail, name='user-detail'),
+    path('update/<int:pk>/', user_update, name='user-detail'),
+    path('delete/<int:pk>/', user_delete, name='user-delete'),
 
     path('payment/', PaymentListAPIView.as_view(), name='payment-list'),
 
