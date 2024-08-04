@@ -7,7 +7,8 @@
     "description": "Краткий экскурс в мир животных",
     "image": "",
     "link": null,
-    "course": 1
+    "course": 1,
+    "owner": null
   }
 },
 {
@@ -15,10 +16,11 @@
   "pk": 3,
   "fields": {
     "title": "География",
-    "description": "Европа с высоты птичьего полета",
+    "description": "5-9 класс.",
     "image": "",
     "link": null,
-    "course": 1
+    "course": 1,
+    "owner": null
   }
 },
 {
@@ -29,7 +31,8 @@
     "description": "Основы программирования",
     "image": "",
     "link": null,
-    "course": 1
+    "course": 1,
+    "owner": null
   }
 },
 {
@@ -40,7 +43,32 @@
     "description": "Основы жизнедеятельности",
     "image": "",
     "link": null,
-    "course": 2
+    "course": 2,
+    "owner": null
+  }
+},
+{
+  "model": "materials.lesson",
+  "pk": 9,
+  "fields": {
+    "title": "Химия",
+    "description": "Секреты H2O",
+    "image": "",
+    "link": null,
+    "course": 1,
+    "owner": 9
+  }
+},
+{
+  "model": "materials.lesson",
+  "pk": 10,
+  "fields": {
+    "title": "Химия 2/0",
+    "description": "Секреты H2O",
+    "image": "",
+    "link": null,
+    "course": 1,
+    "owner": 9
   }
 }
 ]

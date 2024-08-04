@@ -5,7 +5,8 @@
   "fields": {
     "title": "Школьные предметы",
     "image": "",
-    "description": "5-9 класс"
+    "description": "5-9 класс.",
+    "owner": null
   }
 },
 {
@@ -14,7 +15,8 @@
   "fields": {
     "title": "Курс",
     "image": "",
-    "description": "Для школьников"
+    "description": "Для школьников",
+    "owner": null
   }
 }
 ]
