@@ -42,3 +42,15 @@ class Lesson(models.Model):
             ('can_view_lesson', 'Может просматривать уроки'),
             ('can_edit_lesson', 'Может редактировать уроки'),
         ]
+
+
+class Subscription(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="Пользователь")
+    course = models.ForeignKey("Course", on_delete=models.CASCADE, verbose_name="Курс")
+
+    def __str__(self):
+        return f'{self.user.email} - {self.course.title}'
+
+    class Meta:
+        verbose_name = 'подписка'
+        verbose_name_plural = 'подписки'
