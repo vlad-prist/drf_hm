@@ -5,7 +5,7 @@ from materials.validators import validate_link
 
 
 class LessonSerializer(serializers.ModelSerializer):
-    link = serializers.URLField(validators=[validate_link])
+    link = serializers.URLField(validators=[validate_link], read_only=True)
 
     class Meta:
         model = Lesson
@@ -15,7 +15,7 @@ class LessonSerializer(serializers.ModelSerializer):
 class CourseSerializer(serializers.ModelSerializer):
     lessons_count = serializers.SerializerMethodField()
     lesson = LessonSerializer(source='lesson_set', many=True, read_only=True)
-    link = serializers.URLField(validators=[validate_link])
+    link = serializers.URLField(validators=[validate_link], read_only=True)
     is_subscribed = serializers.SerializerMethodField()
 
     class Meta:
