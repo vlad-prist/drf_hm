@@ -12,7 +12,7 @@ from rest_framework_simplejwt.views import (
 app_name = UsersConfig.name
 
 router = DefaultRouter()
-router.register(r'users', UserViewSet, basename='users')
+router.register(r'', UserViewSet, basename='users')
 
 # https://www.django-rest-framework.org/tutorial/6-viewsets-and-routers/
 user_create = UserViewSet.as_view({'post': 'create'})
