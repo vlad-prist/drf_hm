@@ -2,7 +2,7 @@ from django.urls import path
 from rest_framework.permissions import AllowAny
 from rest_framework.urlpatterns import format_suffix_patterns
 from users.apps import UsersConfig
-from users.views import PaymentListAPIView, UserViewSet
+from users.views import PaymentListAPIView, UserViewSet, PaymentCreateAPIView
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -31,6 +31,7 @@ urlpatterns = format_suffix_patterns([
     path('delete/<int:pk>/', user_delete, name='user-delete'),
 
     path('payment/', PaymentListAPIView.as_view(), name='payment-list'),
+    path('payment/create/', PaymentCreateAPIView.as_view(), name='payment-create'),
 
     path('token/', TokenObtainPairView.as_view(permission_classes=(AllowAny,)), name='token'),
     path('token/refresh/', TokenRefreshView.as_view(permission_classes=(AllowAny,)), name='token_refresh'),

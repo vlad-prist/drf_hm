@@ -21,6 +21,10 @@
 - [x] Создана валидация (для уроков и курсов) на проверку ссылки на отсутствие в материалах ссылок на сторонние ресурсы, кроме youtube.com.
 - [x] Создана новая модель "Подписка", настроен контроллер и прописаны урлыю.
 - Для создание подписки вручную через Shell: импортируем каждую модель: Subscription, User, Course. -> Создаем: Subscription.objects.create(user=User.objects.get(pk=3), course=Course.objects.get(pk=2))
-- [x] Приложение Materials протестировано. 
+- [x] Приложение Materials протестировано.
+- [x] Для работы с документацией проекта установлена библиотека [drf-yasg](https://nodejs.org/) (установлен дополнительно setuptools)
+- [x] Реализовано выставление счета на оплату через Stripe (https://dashboard.stripe.com/test/payments/pi_3PmwbZLf1o8Zu43R2J0RSoP5)
+- pip install forex-python
+- pip install strive
  
 
