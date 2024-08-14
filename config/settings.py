@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_simplejwt',
     'drf_yasg',
-
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +127,13 @@ SIMPLE_JWT = {
 
 STRIPE_API_KEY = os.getenv('STRIPE_API_KEY')
 STRIPE_API = 'https://api.stripe.com/'
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
+}
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
