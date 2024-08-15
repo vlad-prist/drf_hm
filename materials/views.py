@@ -1,4 +1,5 @@
 from rest_framework import generics, viewsets, status
+from rest_framework.decorators import action
 from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
@@ -8,6 +9,7 @@ from materials.models import Course, Lesson, Subscription
 from materials.paginators import LessonPaginator, CoursePaginator
 from materials.serializers import CourseSerializer, LessonSerializer, SubscriptionSerializer
 from users.permissions import IsModerator, IsOwner
+from materials.tasks import sending_update_course
 
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -28,6 +30,11 @@ class CourseViewSet(viewsets.ModelViewSet):
         elif self.action == 'destroy':
             self.permission_classes = (IsOwner | ~IsModerator,) # т.е. только владелец может удалять курс
         return super().get_permissions()
+
+    def perform_update(self, serializer):
+        course = serializer.save()
+        sending_update_course.delay(course)
+        course.save()
 
 
 class LessonCreateAPIView(generics.CreateAPIView):
