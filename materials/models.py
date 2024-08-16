@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from config import settings
 
@@ -10,6 +12,9 @@ class Course(models.Model):
     description = models.TextField(verbose_name='описание курса', help_text="Укажите описание курса")
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name="Автор")
     link = models.URLField(max_length=300, verbose_name="ссылка на видео", help_text="Укажите ссылку", **NULLABLE)
+
+    # last_update = models.DateTimeField(auto_now_add=True, verbose_name="Последнее обновление")
+
 
     def __str__(self):
         return self.title
