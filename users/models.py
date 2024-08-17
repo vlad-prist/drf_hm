@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django_celery_beat.utils import now
+
 from materials.models import Course, Lesson
 
 NULLABLE = {'blank': True, 'null': True}
@@ -11,6 +13,7 @@ class User(AbstractUser):
     phone = models.CharField(max_length=35, verbose_name='телефон', **NULLABLE)
     country = models.CharField(max_length=50, verbose_name='страна', **NULLABLE)
     avatar = models.ImageField(upload_to='users/', verbose_name='аватар', **NULLABLE)
+    last_login = models.DateTimeField(default=now, verbose_name="Время последнего посещения")
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

@@ -19,9 +19,10 @@ def sending_update_course(course):
         )
     print("Сообщение отправлено")
 
+
 # @shared_task
 # def sending_update_4_hours():
-#     four_hours_ago = timezone.now() - timedelta(seconds=10)
+#     four_hours_ago = timezone.now() - timedelta(minutes=1)
 #     course_updates = Course.objects.filter(last_update__gte=four_hours_ago)
 #     for course in course_updates:
 #         sending_update_course.delay(course)

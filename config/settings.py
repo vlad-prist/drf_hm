@@ -146,12 +146,16 @@ CELERY_RESULT_SERIALIZER = 'pickle'
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
-# CELERY_BEAT_SCHEDULE = {
-#     'sending_update_4_hours': {
-#         'task': 'materials.tasks.sending_update_4_hours',  # Путь к задаче
-#         'schedule': timedelta(seconds=10),  # Расписание выполнения задачи (например, каждые 10 секунд)
-#     },
-# }
+CELERY_BEAT_SCHEDULE = {
+    # 'sending_update_4_hours': {
+    #     'task': 'materials.tasks.sending_update_4_hours',
+    #     'schedule': timedelta(minutes=1),
+    # },
+    'check_active_users': {
+        'task': 'users.tasks.check_active_users',
+        'schedule': timedelta(minutes=1),
+    },
+}
 
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT = os.getenv('EMAIL_PORT')
