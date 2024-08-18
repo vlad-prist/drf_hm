@@ -26,5 +26,7 @@
 - [x] Реализовано выставление счета на оплату через Stripe (https://dashboard.stripe.com/test/payments/pi_3PmwbZLf1o8Zu43R2J0RSoP5)
 - pip install forex-python
 - pip install strive
+- [x] Реализован функционал подписки на обновление курсов
+- [x] С помощью celery-beat реализована проверка пользователей по дате последнего входа
  
 

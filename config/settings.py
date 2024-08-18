@@ -1,7 +1,7 @@
 import os
 from datetime import timedelta
 from pathlib import Path
-
+from celery.schedules import crontab
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -152,8 +152,8 @@ CELERY_BEAT_SCHEDULE = {
     #     'schedule': timedelta(minutes=1),
     # },
     'check_active_users': {
-        'task': 'users.tasks.check_active_users',
-        'schedule': timedelta(minutes=1),
+        'task': 'materials.tasks.check_active_users',
+        'schedule': timedelta(days=31),
     },
 }
 
