@@ -152,8 +152,9 @@ CELERY_BEAT_SCHEDULE = {
     #     'schedule': timedelta(minutes=1),
     # },
     'check_active_users': {
-        'task': 'materials.tasks.check_active_users',
-        'schedule': timedelta(days=31),
+        'task': 'users.tasks.check_active_users',
+        # 'schedule': timedelta(seconds=31),
+        'schedule': crontab(minute='*/1'),
     },
 }
 
