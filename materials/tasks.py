@@ -1,5 +1,9 @@
+from datetime import timedelta
+
 from celery import shared_task
 from django.core.mail import send_mail
+from django.utils import timezone
+
 from config import settings
 from materials.models import Subscription, Course
 
@@ -19,6 +23,7 @@ def sending_update_course(course):
 
 # @shared_task
 # def sending_update_4_hours():
+#     print("Начало выполнения задачи sending_update_4_hours")
 #     four_hours_ago = timezone.now() - timedelta(minutes=1)
 #     course_updates = Course.objects.filter(last_update__gte=four_hours_ago)
 #     for course in course_updates:

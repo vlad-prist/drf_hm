@@ -138,6 +138,7 @@ CACHES = {
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERY_TIMEZONE = TIME_ZONE
+CELERY_ENABLE_UTC = True
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_ACCEPT_CONTENT = ['pickle', 'json']
@@ -153,8 +154,7 @@ CELERY_BEAT_SCHEDULE = {
     # },
     'check_active_users': {
         'task': 'users.tasks.check_active_users',
-        # 'schedule': timedelta(seconds=31),
-        'schedule': crontab(minute='*/1'),
+        'schedule': timedelta(minutes=2),
     },
 }
 
