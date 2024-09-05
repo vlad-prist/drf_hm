@@ -28,5 +28,16 @@
 - pip install strive
 - [x] Реализован функционал подписки на обновление курсов
 - [x] С помощью celery-beat реализована проверка пользователей по дате последнего входа
+- [x] Приложение залито в Docker
  
+
+## Использование Docker
+
+Для работы с Docker на компьютере должен быть установлен Docker и docker-compose 
+
+Инструкции по установке [Docker Desktop on Windows](https://docs.docker.com/desktop/install/windows-install/)
+
+Дополнительный справочный ресурс [Docker Hub](https://hub.docker.com/)
+
+Создание и последующий запуск контейнера командой docker-compose up -d --build
 
