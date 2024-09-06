@@ -159,3 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 .env/
+file_with_ex_settings_env
+celerybeat-schedule.bak
+celerybeat-schedule.dat
+celerybeat-schedule.dir
